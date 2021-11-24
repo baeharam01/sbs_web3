@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ul = document.getElementById('list')
+            const li = document.getElementById('remove')
+
+            // 자식 노드 리스트에서 특정 자식 노드를 제거
+            ul.removeChild(li)
+
+            const chicken = document.getElementById('chicken')
+            // 속성 노드 제거하기
+            chicken.removeAttribute('style')
+
+            // 노드를 복제하여 새로운 노드를 생성 : 복제할 노드.cloneNode(자식노드복제여부)
+            // 자식까지 복제하려면 true 속성을 주어야함. 부모만 복제하려면 fluse 속성 주면 됨
+            ul.appendChild(li.cloneNode(true))
+        })
+    </script>
+</head>
+<body>
+    <ul id = "list">
+        <li>집에가기</li>
+        <li id="remove">과제하기</li>
+        <li id="chicken" style="color: red;">치킨..</li>
+    </ul>
+</body>
+</html>
